@@ -1,18 +1,17 @@
 let flavors = prompt(
-    "Please enter a comma separated list of flavors.", 
-    "vanilla,vanilla,vanilla,strawberry,coffee,coffee"
+	"Please enter a comma separated list of flavors",
+	"vanilla,vanilla,vanilla,vanilla,strawberry,coffee,coffee"
 ).split(",");
 
-console.log(flavors);
-
-let flavorObj = {}
+let flavorObj = {};
 
 flavors.forEach((flavor) => {
-    if (flavor in flavorObj) {
-        flavor.flavor++;
-    } else {
-        flavorObj.flavor = 1;
-    }
+	if (flavor in flavorObj) {
+		flavorObj[flavor] += 1;
+	} else {
+		flavorObj[flavor] = 1;
+	}
 });
 
+console.log(flavors);
 console.log(flavorObj);
